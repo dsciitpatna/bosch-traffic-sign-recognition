@@ -1,0 +1,12 @@
+{% if data %}
+{% for obj in data %}
+
+<h4>{{obj.name}}</h4>
+</br>
+
+{% endfor %}
+
+{% else %}
+<h1> Data not found</h1>
+
+{% endif %}

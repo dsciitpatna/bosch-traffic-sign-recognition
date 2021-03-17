@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div>
+        <!--                | means OR operator-->
+        <strong><span style="color:yellow">{{message|safe}}</span></strong>
+    </div>
+    {% endfor %}
+    </br>
+    </br>
+    {% else %}
+    </br>
+    {{order}}
+    </br></br>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file1"> Upload a file</label>
+        <input type="file" id="file1" name="file">
+        <small>Only accepts CSV files</small>
+        <button type="submit">Upload</button>
+    </form>
+    </br></br></br>
+    <a href="{% url 'export_users_csv' %}">Export all users</a>
+    {% endif %}
+
+    </br>
+    </br>
+
+    {% if success %}
+
+    <h1> <span style="color:green">Succesfully uploaded the data </span></h1>
+
+    {% endif %}
+
+    {% if failure %}
+
+    <h1> <span style="color:red">Failed to upload the data</span></h1>
+
+    {% endif %}
+</body>
+
+</html>
