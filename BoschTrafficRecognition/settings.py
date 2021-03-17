@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'csvFile.apps.CsvfileConfig',
+    'imguploader.apps.ImguploaderConfig',
     'csv_files.apps.CsvFilesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'imguploader',
-
 ]
 
 MIDDLEWARE = [

@@ -69,7 +69,14 @@ def export_users_csv(request):
 
 
 def show(req):
+    p = Profile()
+    p.name = "Anam"
+    p.phone = "1234567890"
+    p.email = "artist@gmail.com"
+    p.address = "ewrtyuuu"
+    p.profile = "ercvfb y uiy"
+    p.save()
     data = Profile.objects.all()
-    context = {"open": "Yes opeend", "data": data}
+    context = {"open": "Yes opeend", "data": []}
     print(data)
     return render(req, 'show.html', context)
