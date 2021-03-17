@@ -5,7 +5,7 @@
 #### make a folder in root directory of project : logs #for debugging purposes
 #### Don't push logs folder in repository .
 
-## superuser id : bosch-iitp 
+## superuser id : bosch
 
 ## Password required : 1234bosch
 
