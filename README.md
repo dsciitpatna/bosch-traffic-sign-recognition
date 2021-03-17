@@ -5,6 +5,7 @@
 ## Password required : 1234bosch
 
 #### REQUIREMENTS:
+* Use Python 3.8.x
 * ```python3 -m pip install Django==3.1.7```
 * ```pip install Pillow```
 * ```pip install django-phonenumber-field[phonenumbers]```
