@@ -9,6 +9,12 @@
 * ```pip install Pillow```
 * ```pip install django-phonenumber-field[phonenumbers]```
 
+OR Simply run the command below to install the dependencies required to run the project. Run it inside the virtual environment.
+
+```pip install -r requirements.txt```
+
+#### Note: Whenever you add any dependency execute  ```pip freeze > requirements.txt```
+
 ## Method:
 
 * Install a virtual environemnt.
