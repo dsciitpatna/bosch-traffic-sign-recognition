@@ -135,12 +135,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
+    BASE_DIR/'assets'
 ]
 
-MEDIA_URL = '/media/'
+STATIC_ROOT = BASE_DIR/'static_cdn'/"static_root"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'static_cdn'/'media_root'
 
 # Add logging of data
 LOGGING_CONFIG = None
