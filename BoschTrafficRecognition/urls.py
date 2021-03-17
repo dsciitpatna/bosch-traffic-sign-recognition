@@ -9,7 +9,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('csv/', include('csvFile.urls')),
     path('imgup/', include('imguploader.urls')),
-    path('csvup/', include('csv_files.urls')),
 ]
 
 if settings.DEBUG:

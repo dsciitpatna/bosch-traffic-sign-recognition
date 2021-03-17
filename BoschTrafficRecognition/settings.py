@@ -35,7 +35,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'csvFile.apps.CsvfileConfig',
     'imguploader.apps.ImguploaderConfig',
-    'csv_files.apps.CsvFilesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
