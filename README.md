@@ -11,7 +11,7 @@
 
 #### REQUIREMENTS:
 * python3 -m pip3 install Django=3.1.7
-* pip3 install pillow
+* pip3 install Pillow
 * pip3 install django-phonenumber-field[phonenumbers]
 
 
