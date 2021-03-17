@@ -15,7 +15,7 @@
 * Activate the environment (```source bin/activate```)
 * Clone the repository inside the virtual environment.
 * Install the above dependencies
-* Run the app by the follwoing command by going inside the cloned repository: ```python3 manage.py runserver```
+* Run the app by the following command by going inside the cloned repository: ```python3 manage.py runserver```
 
 
 
