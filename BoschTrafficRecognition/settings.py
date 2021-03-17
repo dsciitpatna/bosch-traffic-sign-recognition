@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import logging.config
 from pathlib import Path
 import os
 
@@ -76,14 +77,21 @@ WSGI_APPLICATION = 'BoschTrafficRecognition.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'bosch_database',
+#         'USER': 'root',
+#         'PASSWORD': '',# enter password
+#         'HOST': 'localhost',
+#         'PORT': 3306,# enter port
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bosch_database',
-        'USER': 'root',
-        'PASSWORD': '',# enter password
-        'HOST': 'localhost',
-        'PORT': 3306,# enter port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -132,10 +140,9 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGGING_CONFIG = None
-import logging.config
 logging.config.dictConfig({
     'version': 1,
     'disable_existing_loggers': False,
