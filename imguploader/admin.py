@@ -1,5 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
 from .models import ImgUp
-admin.site.register(ImgUp)
+
+
+class ImgUpAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'slug']
+
+    class Meta:
+        model = ImgUp
+
+
+admin.site.register(ImgUp, ImgUpAdmin)
