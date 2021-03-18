@@ -1,1 +1,12 @@
-<h2>Detail page openedd</h2>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col'>
+        {% if object.image %}
+        <img src='{{ object.image.url }}' class='img-fluid' style="height: 100vh; width: 100vh;" />
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
