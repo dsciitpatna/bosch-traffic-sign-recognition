@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path, re_path, include
 
@@ -8,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('csv/', include('csvFile.urls')),
-    path('imgup/', include('imguploader.urls')),
+    path('img/', include('imguploader.urls', namespace='images')),
 ]
 
 if settings.DEBUG:
