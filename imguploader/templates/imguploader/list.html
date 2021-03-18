@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class='row'>
+    {% for instance in object_list %}
+    <div class='col'>
+        {{ forloop.counter }}
+
+
+        <div class="card" style="width: 20rem;">
+            {% if instance.image %}
+            <a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}"
+                    alt="DSC IIT Patna"></a>
+            {% endif %}
+            <div class="card-body">
+                <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">View</a>
+
+            </div>
+        </div>
+
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+</div>
+<div class='row'>
+    <div class='col-12'>
+        <hr />
+    </div>
+    {% elif forloop.counter|divisibleby:2 %}
+</div>
+</div>
+<div class='row'>
+    <div class='col-12'>
+        <hr />
+    </div>
+    {% else %}
+</div>
+{% endif %}
+
+
+{% endfor %}
+
+</div>
+{% endblock %}

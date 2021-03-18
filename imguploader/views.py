@@ -20,16 +20,18 @@ def image_upload(request):
 
 
 class ImageListView(ListView):
-    template_name = "list.html"
+    template_name = "imguploader/list.html"
 
     def get_queryset(self, *args, **kwargs):
         request = self.request
+        t = ImgUp.objects.all()
+        print(type(t))
         return ImgUp.objects.all()
 
 
 class ImageDetailView(DetailView):
     queryset = ImgUp.objects.all()
-    template_name = "detail.html"
+    template_name = "imguploader/detail.html"
 
     def get_object(self, *args, **kwargs):
         request = self.request

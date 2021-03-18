@@ -19,7 +19,7 @@ def upload_image_path(instance, filename):
     name, ext = get_filename_ext(filename)
     final_filename = '{new_filename}{ext}'.format(
         new_filename=new_filename, ext=ext)
-    return "products/{new_filename}/{final_filename}".format(
+    return "images/{new_filename}/{final_filename}".format(
         new_filename=new_filename,
         final_filename=final_filename
     )
@@ -64,7 +64,6 @@ class ImgUp(models.Model):
 
     def get_absolute_url(self):
         return "/img/view/{slug}/".format(slug=self.slug)
-        # return reverse("products:detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.slug
@@ -75,10 +74,10 @@ class ImgUp(models.Model):
 
 # its is a function thats is called by the pre_sav funtion automatically
 # when a new image is uploaded
-def product_pre_save_receiver(sender, instance, *args, **kwargs):
+def image_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
 
 
 # It gets executed automatically whenever new image is uploaded.
-pre_save.connect(product_pre_save_receiver, sender=ImgUp)
+pre_save.connect(image_pre_save_receiver, sender=ImgUp)
