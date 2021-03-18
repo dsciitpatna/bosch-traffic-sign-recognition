@@ -59,18 +59,28 @@
 
 <body>
     <div class="formcsv">
+        <div class="alert alert-info" style="margin-bottom: 0;text-align: center;">
+            Image should have extention .jpg, .jpeg or .png
+        </div>
         <div class="jumbotron">
             <div class="form-header" style="text-align: center;">
-                <h1>Upload Your Image</h1>
+                <h1>Upload Image</h1>
             </div>
-            {% if result %}
             <div style="text-align: center;">
+                {% if result %}
                 <div class="alert alert-success" style="text-align: center;">
                     <strong>Succesfully uploaded the data</strong>
-                    <p>
-                        <a href="{% url 'imguploader:imageup' %}" class="btn btn-success btn-lg">Upload another Image</a>
-                    </p>
                 </div>
+                <p>
+                    <a href="{% url 'imguploader:imageup' %}" class="btn btn-success btn-lg">Upload another Image</a>
+                </p>
+                {% elif error %}
+                <div class="alert alert-danger" style="text-align: center;">
+                    <strong>No File Selected</strong>
+                </div>
+                <p>
+                    <a href="{% url 'imguploader:imageup' %}" class="btn btn-primary">Upload Again</a>
+                </p>
                 {% else %}
                 <form class="site-form" action="{% url 'imguploader:imageup' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %} {{ form }}
