@@ -13,7 +13,7 @@ def image_upload(request):
         form = forms.UploadImage(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('imguploader:imageup')
+            return render(request, 'imguploader/imgup.html', {'result':'success'})
     else:
         form = forms.UploadImage()
     return render(request, 'imguploader/imgup.html', {'form': form})
