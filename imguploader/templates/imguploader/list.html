@@ -1,25 +1,26 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 
 
 <div class="container">
 
-	<h1 class="heading">Image Gallery</h1>
+    <h1 class="heading">Image Gallery</h1>
 
-	<div class="gallery">
+    <div class="gallery">
 
         {% for instance in object_list %}
-		<div class="gallery-item">
-			<img class="gallery-image" src="{{ instance.image.url }}" >
+        <div class="gallery-item">
+            <img class="gallery-image" src="{{ instance.image.url }}">
             <div class="btn-middle">
                 <a href="{{ instance.get_absolute_url }}" class="btn btn-primary" style="font-size: 150%;">View</a>
             </div>
         </div>
         {% endfor %}
 
-	</div>
+    </div>
+    <p style="text-align: end;">
+        <a href="{% url 'imguploader:imageup' %}" class="btn btn-primary btn-lg" style="margin: 20px;">Upload Image</a>
+    </p>
 
 </div>
 
