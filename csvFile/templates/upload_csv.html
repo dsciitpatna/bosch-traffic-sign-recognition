@@ -202,7 +202,10 @@
                 </div>
             </form>
         </div>
-        <a href="{% url 'export_file' %}"><button class="button">Export all users</button></a>
+        <p style="text-align:center;">
+        <a href="{% url 'export_file' %}" class="btn btn-primary" style="margin: 5px;">Export all users</a>
+        <a href="{% url 'show' %}" class="btn btn-primary" style="margin: 5px;">View Tables</a>
+        </p>
         <div class="alert alert-warning" style="text-align: center;">
             <strong>Only accepts CSV files</strong>
         </div>
