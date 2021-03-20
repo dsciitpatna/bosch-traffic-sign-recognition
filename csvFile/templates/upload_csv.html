@@ -7,7 +7,7 @@
   {% block base_end %} 
      <title>Upload CSV</title>
   {% endblock %}
-{% include 'base/navbar.html' with brand_name="BOSCH IIT Patna" %}
+
 {% block content %}<!-- Form-->
 {% if messages %}
     {% for message in messages %}
@@ -17,7 +17,7 @@
     {% endfor %}
 {% else %}
 <div class="formcsv">
-    <div class="alert alert-info" style="margin-bottom: 0;text-align: center;">
+    <div class="alert alert-info" style="margin-bottom: 0;text-align: center; background-color:#343a40; color:white;">
         {{order}}
     </div>
     <div class="form-panel" style="padding-top: 5%;">
