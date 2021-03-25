@@ -4,11 +4,15 @@ from django.db import models
 
 
 class CSV(models.Model):
-    name = models.CharField(max_length=150)
-    email = models.EmailField(blank=True)
-    address = models.CharField(max_length=50)
-    phone = models.CharField(max_length=150)
-    profile = models.TextField()
+    Width = models.IntegerField()
+    Height= models.IntegerField()
+    Roi_x1 = models.IntegerField()
+    Roi_y1 = models.IntegerField()
+    Roi_x2 = models.IntegerField()
+    Roi_y2 = models.IntegerField()
+    ClassId = models.IntegerField()
+    path = models.TextField()
+    Class_name = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.name
+        return self.path

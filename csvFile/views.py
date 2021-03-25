@@ -34,11 +34,15 @@ def upload_file(req):
         next(io_string)
         for column in csv.reader(io_string, delimiter=',', quotechar="|"):
             _, created = CSV.objects.update_or_create(
-                name=column[0],
-                email=column[1],
-                address=column[2],
-                phone=column[3],
-                profile=column[4])
+                Width=column[0],
+                Height=column[1],
+                Roi_x1=column[2],
+                Roi_y1=column[3],
+                Roi_x2=column[4],
+                Roi_y2=column[5],
+                ClassId=column[6],
+                path=column[7],
+                Class_name=column[8])
         context['success'] = "Succesfully loaded the data"
     except:
         logger.error(req, "oject not found")
@@ -52,10 +56,10 @@ def export_file(request):
     response['Content-Disposition'] = 'attachment; filename="users.csv"'
 
     writer = csv.writer(response)
-    writer.writerow(['name', 'email', 'address', 'phone', 'profile'])
+    writer.writerow(['Width', 'Height', 'Roi_x1', 'Roi_y1', 'Roi_x2','Roi_y2','ClassId','path','Class_name'])
 
     data = CSV.objects.all().values_list(
-        'name', 'email', 'address', 'phone', 'profile')
+       'Width', 'Height', 'Roi_x1', 'Roi_y1', 'Roi_x2','Roi_y2','ClassId','path','Class_name')
     for d in data:
         writer.writerow(d)
 
