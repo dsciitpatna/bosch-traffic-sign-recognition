@@ -9,6 +9,12 @@
 * ```python3 -m pip install Django==3.1.7```
 * ```pip install Pillow```
 * ```pip install django-phonenumber-field[phonenumbers]```
+* ```pip install torch```
+* ```pip install wandb```
+* ```pip install torchvision```
+* ```pip install sklearn```
+* ```pip install torchsummary```
+* ```pip install scikit-image```
 
 OR Simply run the command below to install the dependencies required to run the project. Run it inside the virtual environment.
 
