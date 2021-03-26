@@ -15,6 +15,7 @@
 * ```pip install sklearn```
 * ```pip install torchsummary```
 * ```pip install scikit-image```
+* ```pip install pandas```
 
 OR Simply run the command below to install the dependencies required to run the project. Run it inside the virtual environment.
 
