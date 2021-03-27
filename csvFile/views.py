@@ -36,7 +36,7 @@ def upload_file(req):
     template_name = "upload_csv.html"
     data = CSV.objects.all()
     context = {
-        'order': 'Order of the CSV should be name, email, address, phone, profile',
+        'order': 'Order of the CSV should be Width,Height,Ro1.x1,Roi.y1,Roi.x2,Roi.y2,ClassId,Path',
     }
     if req.method == "GET":
         return render(req, template_name, context)
